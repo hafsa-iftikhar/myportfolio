@@ -1,0 +1,151 @@
+.minimal-footer {
+  width: 100%;
+  background-color: #520a0a; /* Deep dark maroon / charcoal background */
+  color: #f3efe6; /* Light editorial beige text */
+  padding: 1.5rem 4vw;
+  border-top: 1px solid rgba(243, 239, 230, 0.12);
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footer-brand {
+  color: #f3efe6;
+}
+
+.footer-divider,
+.footer-dot {
+  font-size: 0.9rem; /* Makes the bullet dot larger and more visible */
+  font-weight: 700;
+  color: #d4c3a3; /* Matches your beige accent color */
+  opacity: 0.8;
+  margin: 0 4px; /* Adds a little breathing room around each dot */
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust spacing between items */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.footer-link {
+  color: #f3efe6;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  color: #d4c3a3;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (992px, 768px, 562px, 480px)
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops (max-width: 992px) */
+@media (max-width: 992px) {
+  .minimal-footer {
+    padding: 2.5rem 5vw;
+  }
+}
+
+/* Tablets / Compact Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .minimal-footer {
+    min-height: auto;
+    padding: 1rem 5vw;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .footer-left,
+  .footer-links {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Custom 562px Breakpoint */
+@media (max-width: 562px) {
+  .minimal-footer {
+    padding: 1rem 4vw;
+  }
+
+  .footer-container {
+    gap: 0.2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-links {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.72rem;
+  }
+}
+
+/* Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .minimal-footer {
+    padding: 1rem 4vw;
+  }
+
+  .footer-container {
+    gap: 0.8rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-links {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.68rem;
+    gap: 6px;
+  }
+
+  .footer-divider,
+  .footer-dot {
+    font-size: 0.8rem;
+    margin: 0 3px;
+  }
+}

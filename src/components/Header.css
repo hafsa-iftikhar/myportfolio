@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+/* --- NAVIGATION CONTAINER BASE --- */
+.portfolio-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opacity */  backdrop-filter: blur(0px); /* No blur initially */
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1.8px solid #451515; /* Sophisticated solid dark grey line */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              -webkit-backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- THE ACTIVE SCROLL STATE --- */
+.portfolio-header.scrolled {
+  height: 60px; /* Condenses beautifully on scroll */
+  backdrop-filter: blur(3px); /* Activates the high-end glassmorphism blur */
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Soft drop shadow for floating depth */
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Rigid symmetric grid */
+  align-items: center;
+}
+
+/* --- LOGO BRAND AREA --- */
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+.nav-logo a {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #3f0e0e;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo a span {
+  color: #695f5f; /* Earth-tone signature dot */
+}
+
+.nav-logo a:hover {
+  opacity: 0.8;
+}
+
+/* --- DESKTOP NAV LINKS --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-links.left {
+  justify-content: flex-start;
+}
+
+.nav-links.right {
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #555555; /* Refined dark charcoal */
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.4s ease;
+}
+
+/* Micro underline slide interaction */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #121212;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-links a:hover {
+  color: #121212;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --- THE CV BUTTON --- */
+.cv-btn {
+  border: 1px solid #2a2a2a; /* Matching dark grey border */
+  padding: 0.65rem 1.6rem !important;
+  border-radius: 100px;
+  color: #121212 !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cv-btn::after {
+  display: none !important;
+}
+
+.cv-btn:hover {
+  background-color: #121212;
+  color: #ffffff !important;
+  border-color: #121212;
+  box-shadow: 0 10px 20px rgba(18, 18, 18, 0.08);
+}
+
+/* --- MINIMALIST HAMBURGER BUTTON --- */
+.mobile-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 1100;
+  padding: 0;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  position: absolute;
+  height: 1.5px;
+  width: 100%;
+  background-color: #3b0a11; /* Dark Maroon */
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-toggle span:nth-child(1) { top: 3px; }
+.mobile-menu-toggle span:nth-child(2) { top: 11px; }
+.mobile-menu-toggle span:nth-child(3) { top: 19px; }
+
+/* Active Menu Toggle Transformations */
+.mobile-menu-toggle.open span:nth-child(1) {
+  top: 11px;
+  transform: rotate(135deg);
+}
+
+.mobile-menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+  left: -20px;
+}
+
+.mobile-menu-toggle.open span:nth-child(3) {
+  top: 11px;
+  transform: rotate(-135deg);
+}
+
+/* --- RESPONSIVE SIDEBAR DRAWER --- */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 2rem;
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav-logo {
+    justify-content: flex-start;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    justify-self: flex-end;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100vh;
+    background-color: #f3efe6; /* Warm Editorial Beige Background */
+    border-left: 1px solid rgba(59, 10, 17, 0.15);
+    box-shadow: -15px 0 50px rgba(59, 10, 17, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 4rem;
+    gap: 2rem;
+    z-index: 1050;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-links.left.active,
+  .nav-links.right.active {
+    transform: translateX(0);
+  }
+
+  .nav-links.right {
+    height: auto;
+    top: auto;
+    bottom: 5rem;
+    box-shadow: none;
+    background: transparent;
+    z-index: 1060;
+  }
+
+  .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #3b0a11; /* Dark Maroon Text */
+    width: 100%;
+    transform: translateX(30px);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, color 0.3s ease;
+  }
+
+  .nav-links.active a {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.active a:nth-child(2) { transition-delay: 0.15s; }
+  .nav-links.active a:nth-child(3) { transition-delay: 0.2s; }
+  .nav-links.active a:nth-child(4) { transition-delay: 0.25s; }
+
+  .cv-btn {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1.5px solid #3b0a11; /* Dark Maroon Border */
+    padding: 0.5rem 0 !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    color: #3b0a11 !important;
+    width: auto !important;
+    background: transparent !important;
+  }
+
+  .cv-btn:hover {
+    background: transparent !important;
+    color: #5c1421 !important;
+    border-color: #5c1421;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-header {
+    height: 80px;
+  }
+  
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    padding: 3rem 2.5rem;
+  }
+
+  .nav-links a {
+    font-size: 1.6rem;
+  }
+}
