@@ -312,10 +312,13 @@ export default function Services() {
               <span className="cta-label">HAVE A PROJECT IN MIND?</span>
               <h3 className="cta-title">LET'S BUILD SOMETHING EXCEPTIONAL.</h3>
             </div>
-            <button className="cta-button">
-              <span>GET IN TOUCH</span>
-              <span className="cta-arrow">→</span>
-            </button>
+            <button 
+  className="cta-button"
+  onClick={() => window.open('https://wa.me/923369387999', '_blank')}
+>
+  <span>GET IN TOUCH</span>
+  <span className="cta-arrow">→</span>
+</button>
           </div>
 
         </div>
