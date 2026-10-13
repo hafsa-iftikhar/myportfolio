@@ -178,7 +178,7 @@
   transform: rotate(-135deg);
 }
 
-/* --- RESPONSIVE SIDEBAR DRAWER (1024px, 786px, 562px, 480px and below) --- */
+/* --- RESPONSIVE SIDEBAR DRAWER (1024px BASE) --- */
 @media (max-width: 1024px) {
   .nav-container {
     padding: 0 2rem;
@@ -194,7 +194,7 @@
     justify-self: flex-end;
   }
 
-  /* Left links drawer panel (Centered vertically with elegant spacing) */
+  /* Left links drawer panel (Centered vertically with balanced padding) */
   .nav-links.left {
     position: fixed;
     top: 0;
@@ -206,9 +206,9 @@
     box-shadow: -20px 0 50px rgba(59, 10, 17, 0.08);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Options perfectly centered in the middle */
+    justify-content: center;
     align-items: flex-start;
-    padding: 5rem 3.5rem 15rem 3.5rem !important;
+    padding: 6rem 3.5rem 8rem 3.5rem !important;
     gap: 2rem;
     z-index: 1050;
     transform: translateX(100%);
@@ -216,7 +216,7 @@
     pointer-events: auto;
   }
 
-  /* Right links container overlay for CV button - positioned neatly at the bottom */
+  /* Right links container overlay for CV button - positioned neatly at bottom */
   .nav-links.right {
     position: fixed;
     top: 0;
@@ -224,12 +224,12 @@
     width: 340px;
     height: 100vh;
     background-color: transparent;
-    pointer-events: none; /* Allows clicks to pass through empty space */
+    pointer-events: none;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* CV button placed towards the bottom section */
+    justify-content: flex-end;
     align-items: flex-start;
-    padding: 7rem 3.5rem 7rem 3.5rem;
+    padding: 4rem 3.5rem 5rem 3.5rem;
     z-index: 1051;
     transform: translateX(100%);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -243,7 +243,7 @@
   .nav-links.right.active .cv-btn {
     transform: translateX(0);
     opacity: 1;
-    transition-delay: 0.3s; /* Smooth entry delay after the center links */
+    transition-delay: 0.3s;
   }
 
   .nav-links.left.active,
@@ -259,6 +259,7 @@
     letter-spacing: 0.08em;
     color: #3b0a11;
     width: 100%;
+    position: relative;
     transform: translateX(30px);
     opacity: 0;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, color 0.3s ease;
@@ -267,10 +268,14 @@
 
   /* UNDERLINE EFFECT ON HOVER IN SIDEBAR */
   .nav-links.left a::after {
-    display: block; /* Turn underline back on for sidebar */
+    content: '';
+    position: absolute;
+    display: block;
     height: 1.5px;
+    width: 100%;
     background-color: #3b0a11;
     bottom: -4px;
+    left: 0;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -296,7 +301,7 @@
   .nav-links.left.active a:nth-child(3) { transition-delay: 0.2s; }
   .nav-links.left.active a:nth-child(4) { transition-delay: 0.25s; }
 
-  /* Mobile/Sidebar CV Button Styling with top placement & underline */
+  /* Mobile/Sidebar CV Button Styling */
   .cv-btn {
     border-radius: 0 !important;
     border: none !important;
@@ -314,12 +319,6 @@
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, color 0.3s ease !important;
   }
 
-  .nav-links.right.active .cv-btn {
-    transform: translateX(0);
-    opacity: 1;
-    transition-delay: 0.05s;
-  }
-
   .cv-btn:hover {
     background: transparent !important;
     color: #5c1421 !important;
@@ -328,44 +327,113 @@
   }
 }
 
-/* --- SPECIFIC ADJUSTMENTS FOR 786px, 562px, and 480px --- */
+/* --- MEDIUM BREAKPOINT (786px) --- */
 @media (max-width: 786px) {
-  .nav-container {
-    padding: 0 2rem;
-  }
   .nav-links.left,
   .nav-links.right {
-    width: 300px;
+    width: 310px;
+    padding-left: 2.8rem !important;
+    padding-right: 2.8rem !important;
+  }
+
+  .nav-links.left {
+    padding-top: 5rem !important;
+    padding-bottom: 7rem !important;
+    gap: 1.8rem;
+  }
+
+  .nav-links.right {
+    padding-bottom: 4rem;
+  }
+
+  .nav-links.left a {
+    font-size: 1.4rem;
   }
 }
 
+/* --- LARGE MOBILE / SMALL TABLET (562px) --- */
 @media (max-width: 562px) {
   .nav-links.left,
   .nav-links.right {
     width: 280px;
-    padding: 3rem 2.5rem;
+    padding-left: 2.2rem !important;
+    padding-right: 2.2rem !important;
   }
+
+  .nav-links.left {
+    padding-top: 1rem !important;
+    padding-bottom: 8.5rem !important;
+    gap: 1.6rem;
+  }
+
+  .nav-links.right {
+    padding-bottom: 9.5rem;
+  }
+
   .nav-links.left a {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.06em;
+  }
+
+  .cv-btn {
+    font-size: 0.88rem !important;
   }
 }
 
+/* --- SMALL MOBILE SCREENS (480px and below) --- */
 @media (max-width: 480px) {
   .portfolio-header {
-    height: 75px;
-  }
-  
-  .nav-container {
-    padding: 0 1.25rem;
+    height: 60px;
   }
 
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  /* Drawer goes FULL WIDTH on mobile screens to avoid squeezing content */
   .nav-links.left,
   .nav-links.right {
-    width: 100%;
-    padding: 3rem 2rem;
+    width: 100vw;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+
+  .nav-links.left {
+    padding-top: 5rem !important;
+    padding-bottom: 8rem !important;
+    gap: 1.8rem;
+  }
+
+  .nav-links.right {
+    padding-bottom: 3.5rem;
   }
 
   .nav-links.left a {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .cv-btn {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* --- EXTRA SMALL MOBILE SCREENS (360px and below) --- */
+@media (max-width: 360px) {
+  .nav-links.left {
+    padding-top: 4rem !important;
+    padding-bottom: 7rem !important;
+    gap: 1.4rem;
+  }
+
+  .nav-links.right {
+    padding-bottom: 2.5rem;
+  }
+
+  .nav-links.left a {
+    font-size: 1.2rem;
+  }
+
+  .cv-btn {
+    font-size: 0.82rem !important;
   }
 }
