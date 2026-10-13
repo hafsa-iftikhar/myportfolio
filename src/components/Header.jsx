@@ -42,14 +42,14 @@ export default function Header() {
 
         {/* Right Links */}
         <div className={`nav-links right ${isMenuOpen ? 'active' : ''}`}>
-          <a 
-            href="/my-cv.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="cv-btn"
-            onClick={closeMenu}
+           <a 
+           href="/images/mycv.pdf" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           className="cv-btn"
+           onClick={closeMenu}
           >
-            MY CV
+           MY CV
           </a>
         </div>
 

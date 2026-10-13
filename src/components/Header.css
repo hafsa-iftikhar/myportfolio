@@ -7,9 +7,10 @@
   left: 0;
   width: 100%;
   height: 65px;
-background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opacity */  backdrop-filter: blur(0px); /* No blur initially */
+  background-color: rgba(243, 239, 230, 0.85);
+  backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  border-bottom: 1.8px solid #451515; /* Sophisticated solid dark grey line */
+  border-bottom: 1.8px solid #451515;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -21,10 +22,10 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
 
 /* --- THE ACTIVE SCROLL STATE --- */
 .portfolio-header.scrolled {
-  height: 60px; /* Condenses beautifully on scroll */
-  backdrop-filter: blur(3px); /* Activates the high-end glassmorphism blur */
+  height: 60px;
+  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Soft drop shadow for floating depth */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 .nav-container {
@@ -33,7 +34,7 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
   margin: 0 auto;
   padding: 0 4rem;
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Rigid symmetric grid */
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
 }
 
@@ -55,7 +56,7 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
 }
 
 .nav-logo a span {
-  color: #695f5f; /* Earth-tone signature dot */
+  color: #695f5f;
 }
 
 .nav-logo a:hover {
@@ -82,14 +83,13 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: #555555; /* Refined dark charcoal */
+  color: #555555;
   text-decoration: none;
   position: relative;
   padding: 0.5rem 0;
   transition: color 0.4s ease;
 }
 
-/* Micro underline slide interaction */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -112,9 +112,9 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
   transform-origin: left;
 }
 
-/* --- THE CV BUTTON --- */
+/* --- THE CV BUTTON (Desktop) --- */
 .cv-btn {
-  border: 1px solid #2a2a2a; /* Matching dark grey border */
+  border: 1px solid #2a2a2a;
   padding: 0.65rem 1.6rem !important;
   border-radius: 100px;
   color: #121212 !important;
@@ -126,9 +126,9 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
 }
 
 .cv-btn:hover {
-  background-color: #121212;
+  background-color: #471010;
   color: #ffffff !important;
-  border-color: #121212;
+  border-color: #310b0b;
   box-shadow: 0 10px 20px rgba(18, 18, 18, 0.08);
 }
 
@@ -150,7 +150,7 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
   position: absolute;
   height: 1.5px;
   width: 100%;
-  background-color: #3b0a11; /* Dark Maroon */
+  background-color: #3b0a11;
   border-radius: 2px;
   opacity: 1;
   left: 0;
@@ -178,7 +178,7 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
   transform: rotate(-135deg);
 }
 
-/* --- RESPONSIVE SIDEBAR DRAWER --- */
+/* --- RESPONSIVE SIDEBAR DRAWER (1024px, 786px, 562px, 480px and below) --- */
 @media (max-width: 1024px) {
   .nav-container {
     padding: 0 2rem;
@@ -194,24 +194,56 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
     justify-self: flex-end;
   }
 
-  .nav-links {
+  /* Left links drawer panel (Centered vertically with elegant spacing) */
+  .nav-links.left {
     position: fixed;
     top: 0;
     right: 0;
-    width: 380px;
+    width: 340px;
     height: 100vh;
-    background-color: #f3efe6; /* Warm Editorial Beige Background */
+    background-color: #f3efe6;
     border-left: 1px solid rgba(59, 10, 17, 0.15);
-    box-shadow: -15px 0 50px rgba(59, 10, 17, 0.08);
+    box-shadow: -20px 0 50px rgba(59, 10, 17, 0.08);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Options perfectly centered in the middle */
     align-items: flex-start;
-    padding: 3rem 4rem;
+    padding: 4rem 3.5rem;
     gap: 2rem;
     z-index: 1050;
     transform: translateX(100%);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: auto;
+  }
+
+  /* Right links container overlay for CV button - positioned neatly at the bottom */
+  .nav-links.right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 340px;
+    height: 100vh;
+    background-color: transparent;
+    pointer-events: none; /* Allows clicks to pass through empty space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* CV button placed towards the bottom section */
+    align-items: flex-start;
+    padding: 4rem 3.5rem;
+    z-index: 1051;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Re-enable clicks specifically on the CV button */
+  .nav-links.right .cv-btn {
+    pointer-events: auto;
+  }
+
+  .nav-links.right.active .cv-btn {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.3s; /* Smooth entry delay after the center links */
   }
 
   .nav-links.left.active,
@@ -219,48 +251,73 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
     transform: translateX(0);
   }
 
-  .nav-links.right {
-    height: auto;
-    top: auto;
-    bottom: 5rem;
-    box-shadow: none;
-    background: transparent;
-    z-index: 1060;
-  }
-
-  .nav-links a {
+  /* Sidebar navigation items styling */
+  .nav-links.left a {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    letter-spacing: 0.05em;
-    color: #3b0a11; /* Dark Maroon Text */
+    letter-spacing: 0.08em;
+    color: #3b0a11;
     width: 100%;
     transform: translateX(30px);
     opacity: 0;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, color 0.3s ease;
+    pointer-events: auto;
   }
 
-  .nav-links.active a {
+  /* UNDERLINE EFFECT ON HOVER IN SIDEBAR */
+  .nav-links.left a::after {
+    display: block; /* Turn underline back on for sidebar */
+    height: 1.5px;
+    background-color: #3b0a11;
+    bottom: -4px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-links.left a:hover {
+    color: #5c1421;
+  }
+
+  .nav-links.left a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .nav-links.left.active a {
     transform: translateX(0);
     opacity: 1;
   }
 
-  .nav-links.active a:nth-child(1) { transition-delay: 0.1s; }
-  .nav-links.active a:nth-child(2) { transition-delay: 0.15s; }
-  .nav-links.active a:nth-child(3) { transition-delay: 0.2s; }
-  .nav-links.active a:nth-child(4) { transition-delay: 0.25s; }
+  /* Staggered load delays for links */
+  .nav-links.left.active a:nth-child(1) { transition-delay: 0.1s; }
+  .nav-links.left.active a:nth-child(2) { transition-delay: 0.15s; }
+  .nav-links.left.active a:nth-child(3) { transition-delay: 0.2s; }
+  .nav-links.left.active a:nth-child(4) { transition-delay: 0.25s; }
 
+  /* Mobile/Sidebar CV Button Styling with top placement & underline */
   .cv-btn {
-    border-radius: 0;
-    border: none;
-    border-bottom: 1.5px solid #3b0a11; /* Dark Maroon Border */
-    padding: 0.5rem 0 !important;
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    font-size: 0.85rem !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1.5px solid #3b0a11 !important;
+    padding: 0.4rem 0 !important;
+    font-size: 0.95rem !important;
     font-weight: 700 !important;
+    letter-spacing: 0.15em;
     color: #3b0a11 !important;
     width: auto !important;
     background: transparent !important;
+    position: relative;
+    transform: translateX(30px);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, color 0.3s ease !important;
+  }
+
+  .nav-links.right.active .cv-btn {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0.05s;
   }
 
   .cv-btn:hover {
@@ -271,21 +328,44 @@ background-color: rgba(243, 239, 230, 0.85); /* Editorial Beige with slight opac
   }
 }
 
+/* --- SPECIFIC ADJUSTMENTS FOR 786px, 562px, and 480px --- */
+@media (max-width: 786px) {
+  .nav-container {
+    padding: 0 2rem;
+  }
+  .nav-links.left,
+  .nav-links.right {
+    width: 300px;
+  }
+}
+
+@media (max-width: 562px) {
+  .nav-links.left,
+  .nav-links.right {
+    width: 280px;
+    padding: 3rem 2.5rem;
+  }
+  .nav-links.left a {
+    font-size: 1.35rem;
+  }
+}
+
 @media (max-width: 480px) {
   .portfolio-header {
-    height: 80px;
+    height: 75px;
   }
   
   .nav-container {
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
   }
 
-  .nav-links {
+  .nav-links.left,
+  .nav-links.right {
     width: 100%;
-    padding: 3rem 2.5rem;
+    padding: 3rem 2rem;
   }
 
-  .nav-links a {
-    font-size: 1.6rem;
+  .nav-links.left a {
+    font-size: 1.5rem;
   }
 }
