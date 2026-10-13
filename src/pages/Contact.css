@@ -346,14 +346,156 @@
   color: #f3efe6;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES
+   ================================---------- */
+
+/* Tablet & Below: 992px */
+@media screen and (max-width: 992px) {
+  .contact-page-wrapper {
+    padding: 6rem 0 4rem 0;
+  }
+
+  .contact-container {
+    padding: 0 5vw;
+  }
+
+  .contact-header {
+    margin-bottom: 4rem;
+    padding-bottom: 2.5rem;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
 
+  .contact-info-col {
+    gap: 2.4rem;
+  }
+
+  .editorial-form {
+    gap: 2rem;
+  }
+}
+
+/* Tablet Portrait & Small Laptops: 768px */
+@media screen and (max-width: 768px) {
+  .contact-page-wrapper {
+    padding: 5rem 0 3rem 0;
+  }
+
+  .contact-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .contact-main-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
   .form-row-dual {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .form-success-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .form-success-card h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Large Mobile: 562px */
+@media screen and (max-width: 562px) {
+  .contact-container {
+    padding: 0 6vw;
+  }
+
+  .contact-page-wrapper {
+    padding: 7rem 0 2.5rem 0;
+  }
+
+  .contact-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .service-pills-row {
+    gap: 0.5rem;
+  }
+
+  .service-pill {
+    padding: 7px 14px;
+    font-size: 0.68rem;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1.1rem 2rem;
+  }
+}
+
+/* Small Mobile: 480px */
+@media screen and (max-width: 480px) {
+  .contact-container {
+    padding: 0 5vw;
+  }
+
+  .contact-main-title {
+    font-size: 2.4rem;
+  }
+
+  .luxe-maroon-tag,
+  .availability-text,
+  .info-label,
+  .form-label,
+  .copy-badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .email-text {
+    font-size: 1.5rem;
+    text-underline-offset: 4px;
+  }
+
+  .info-value {
+    font-size: 1rem;
+  }
+
+  .info-subtext {
+    font-size: 0.8rem;
+  }
+
+  .availability-card {
+    padding: 8px 14px;
+    gap: 10px;
+  }
+
+  .editorial-input,
+  .editorial-textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+  }
+
+  .form-success-card {
+    padding: 2rem 1.2rem;
+  }
+
+  .form-success-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .form-success-card p {
+    font-size: 0.88rem;
+  }
+
+  .reset-btn {
+    width: 100%;
+    text-align: center;
   }
 }

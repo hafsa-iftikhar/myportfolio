@@ -145,7 +145,7 @@ export default function Hero() {
 
           {/* Subtitle Paragraph */}
           <p className="typewriter-subtitle">
-            Building responsive websites, intuitive user interfaces,<br />
+            Building responsive websites, intuitive user interfaces,
             and engaging digital experiences optimized for performance and SEO.
           </p>
 
