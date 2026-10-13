@@ -66,7 +66,7 @@ const portfolioProjects = [
     description:
       "A corporate textile manufacturing website showcasing fabric production, manufacturing capabilities, product information, and business inquiry options through a professional, responsive interface.",
     mediaType: "video",
-    videoUrl: "/images/ictextile.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791880496/icecream.mp4",
     tags: [
       "React.js",
       "JavaScript",
@@ -111,7 +111,7 @@ const portfolioProjects = [
     description:
       "A digital publishing website designed to organize academic research and publication-related content through a structured interface, responsive layouts, and search-friendly content presentation.",
     mediaType: "video",
-    videoUrl: "/images/publicationverse.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791883068/publicationverse2.mp4",
     tags: [
       "React.js",
       "JavaScript",
@@ -155,7 +155,7 @@ const portfolioProjects = [
     description:
       "A corporate website for a packaging business, presenting packaging solutions, product information, and company services through a modern visual layout and responsive user experience.",
     mediaType: "video",
-    videoUrl: "/images/movingpackages.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791880809/movingpackages.mp4",
     tags: [
       "React.js",
       "JavaScript",
@@ -200,7 +200,7 @@ const portfolioProjects = [
     description:
       "A professional website showcasing software services, technical capabilities, and digital solutions through structured content, modern styling, and responsive web design.",
     mediaType: "video",
-    videoUrl: "/images/vectorscape.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791883215/vectorscape2.mp4",
     tags: [
       "HTML5",
       "CSS3",
@@ -244,7 +244,7 @@ const portfolioProjects = [
     description:
       "A custom e-commerce storefront built with WordPress and Elementor, focused on immersive product presentation, layout customization, shopping navigation, and a consistent visual identity for apparel retail.",
     mediaType: "video",
-    videoUrl: "/images/knove.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791880815/knove.mp4",
     tags: [
       "WordPress",
       "Elementor",
@@ -290,7 +290,7 @@ const portfolioProjects = [
     description:
       "A luxury fine jewelry e-commerce website built on WordPress using the Astra theme and WooCommerce, featuring refined product catalogs, secure payment gateway integration, and an elegant editorial shopping experience.",
     mediaType: "video",
-    videoUrl: "/images/raniphennava.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791881199/raniphennava.mp4",
     tags: [
       "WordPress",
       "Astra Theme",
@@ -336,7 +336,7 @@ const portfolioProjects = [
     description:
       "A specialized bakery e-commerce storefront built on the Salla platform for a client in Saudi Arabia, featuring localized payment integrations, Arabic-English bilingual support, and appetizing product presentation.",
     mediaType: "video",
-    videoUrl: "/images/sondos.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791881985/sondos.mp4",
     tags: [
       "Salla",
       "E-Commerce",
@@ -386,7 +386,7 @@ const portfolioProjects = [
   description:
     "An interactive Apple Watch interface concept designed in Figma, exploring screen layouts, intuitive navigation, clickable interactions, and a streamlined smartwatch user experience.",
   mediaType: "video",
-  videoUrl: "/images/watches.mp4",
+  videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791881935/watches.mp4",
   tags: [
     "Figma",
     "UI/UX Design",
@@ -430,7 +430,7 @@ const portfolioProjects = [
   description:
     "A creative Dr Pepper brand design concept exploring bold visual identity, promotional graphics, typography, and digital layouts inspired by the brand's distinctive personality.",
   mediaType: "video",
-  videoUrl: "/images/can.mp4",
+  videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791880498/can.mp4",
   tags: [
     "Branding",
     "Figma",
@@ -474,7 +474,7 @@ const portfolioProjects = [
   description:
     "An ice cream branding concept combining product-focused visuals, creative typography, color direction, and engaging digital layouts to create an appealing dessert brand experience.",
   mediaType: "video",
-  videoUrl: "/images/icecream.mp4",
+  videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791880496/icecream.mp4",
   tags: [
     "Branding",
     "Figma",
@@ -519,7 +519,7 @@ const portfolioProjects = [
   description:
     "An interactive Learning Management System (LMS) portal prototype designed in Figma. The interface concept focuses on organizing learning content, presenting course information, and creating a simple, user-friendly experience for students navigating a digital learning platform.",
   mediaType: "video",
-  videoUrl: "/images/portalfigma.mp4",
+  videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791881164/portalfigma.mp4",
   tags: [
     "Figma",
     "UI/UX Design",
