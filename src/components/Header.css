@@ -208,7 +208,7 @@
     flex-direction: column;
     justify-content: center; /* Options perfectly centered in the middle */
     align-items: flex-start;
-    padding: 4rem 3.5rem;
+    padding: 5rem 3.5rem 15rem 3.5rem !important;
     gap: 2rem;
     z-index: 1050;
     transform: translateX(100%);
@@ -229,7 +229,7 @@
     flex-direction: column;
     justify-content: flex-end; /* CV button placed towards the bottom section */
     align-items: flex-start;
-    padding: 4rem 3.5rem;
+    padding: 7rem 3.5rem 7rem 3.5rem;
     z-index: 1051;
     transform: translateX(100%);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
