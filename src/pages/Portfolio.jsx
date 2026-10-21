@@ -66,7 +66,7 @@ const portfolioProjects = [
     description:
       "A corporate textile manufacturing website showcasing fabric production, manufacturing capabilities, product information, and business inquiry options through a professional, responsive interface.",
     mediaType: "video",
-    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791880496/icecream.mp4",
+    videoUrl: "https://res.cloudinary.com/yqgsavod/video/upload/v1791880549/ictextile.mp4",
     tags: [
       "React.js",
       "JavaScript",
@@ -377,7 +377,7 @@ const portfolioProjects = [
   // =========================================================
   id: 8,
   title: "Apple Watch - UI/UX Prototype",
-  category: "UI/UX Design",
+  category: "Interactive 3D",
   categoryTag: "Interactive Figma Prototype",
   client: "Concept Design",
   year: "2026",
@@ -421,7 +421,7 @@ const portfolioProjects = [
   // =========================================================
   id: 9,
   title: "Dr Pepper - Branding & UI Design",
-  category: "Branding & UI/UX",
+  category: "Interactive 3D",
   categoryTag: "Brand Identity & Digital Design",
   client: "Concept Design",
   year: "2026",
@@ -465,7 +465,7 @@ const portfolioProjects = [
   // =========================================================
   id: 10,
   title: "Ice Cream - Branding & Digital Experience",
-  category: "Branding & UI/UX",
+  category: "Interactive 3D",
   categoryTag: "Product Branding & Visual Design",
   client: "Concept Design",
   year: "2026",
@@ -510,7 +510,7 @@ const portfolioProjects = [
 {
   id: 11,
   title: "LMS Portal - Interactive Figma Prototype",
-  category: "UI/UX Design",
+  category: "Interactive 3D",
   categoryTag: "Learning Portal UI/UX",
   client: "Portfolio Concept",
   year: "2026",
